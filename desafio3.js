@@ -68,14 +68,23 @@ while (true) {
                     alert(`Node.js é uma tecnologia muito utilizada no desenvolvimento de aplicações web!`);
                 }
                 else if (tecnologia === 'python') {
-                    alert(`Python é uma linguagem de programação muito utilizada no desenvolvimento de aplicações web!`);
+                    alert(`Python é uma linguagem de programação muito utilizada para backend!`);
                 }
                 else if (tecnologia === 'ruby') {
                     alert(`Ruby é uma linguagem de programação muito utilizada no desenvolvimento de aplicações web!`);
-            }
-            else {
+                }
+            } else {
                 alert(`Tecnologia não disponível!`);
             }
+            let continuar = prompt(`Você quer aprender mais alguma tecnologia? Responda com sim ou não.`).toLowerCase();
+                if (continuar === 'sim') {
+                continue;
+                } else if (continuar === 'não') {
+                alert(`Muito bem, você escolheu não aprender mais tecnologias!`);
+                break;
+                } else {
+                alert(`Opção inválida!`);
+                }
 
         } else if (tecnologias === 'não') {
             alert(`Muito bem ${nome}, você escolheu não aprender mais tecnologias!`);
@@ -87,4 +96,3 @@ while (true) {
 
         }
 
-} 
