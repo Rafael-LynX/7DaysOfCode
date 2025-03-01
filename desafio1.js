@@ -1,6 +1,7 @@
 /* Desafio 1 
 Feito para rodar com node.js
-*/
+Desafio de correção de código */
+
 let numeroUm = 1
 let stringUm = '1'
 let numeroTrinta = 30

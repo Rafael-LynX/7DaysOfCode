@@ -1,4 +1,7 @@
-/* Desafio 3 */
+/* Desafio 3 
+Desafio de while, desenvolver um programa que faça várias perguntas dentro dele e continue caso ele
+quiera continuar
+*/
 
 listaTecnologias = ['Node.js', 'Python', 'Ruby'];
 

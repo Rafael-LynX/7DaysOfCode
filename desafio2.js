@@ -1,4 +1,6 @@
-/* Desafio 2 */
+/* Desafio 2 
+Desafio de de if e else, para melhorar sua utilização, criando um programa de perguntas
+*/
 
 let nome = prompt('Qual é seu nome: ');
 let idade = prompt('Qual é sua idade: ');
