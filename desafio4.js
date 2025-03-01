@@ -2,77 +2,66 @@
 Jogo de advinhação, o programa deve sortear um número entre 0 e 10 e o usuário deve tentar adivinhar
 */
 
-let numeroLimites = 10;
+let minimo = 0;
+let maximo = 10;
 let tentativas = 3;
 
 
-function advinhemNumeroSecreto() {
-    let palpite = parseInt(prompt('Digite um número entre 0 e 10: '), 10);
-
-    if (palpite > 10 || palpite < 0 || isNaN(palpite)) {
-        alert('Número inválido!');
-    } else {
-        console.log(palpite);
-        return palpite;
-    }   
-}
-
 function gerarNumeroSecreto() {
-    numero = parseInt(Math.floor(Math.random() * numeroLimites));
+    let numero = parseInt(Math.floor(Math.random() * (maximo - minimo + 1) + minimo));
     console.log(numero);
-    return numero;  
+    return numero; 
 }
 
-function mensagemInicial() {
-    alert('Bem vindo ao jogo de adivinhação!');
-    alert('Você tem 3 tentativas para adivinhar o número secreto!');
-    alert('O número secreto está entre 0 e 10!');
+let numeroSecreto = gerarNumeroSecreto();
+
+
+function verificarChute() {
+    while (tentativas > 0) {
+        let chute = parseInt(prompt('Digite um número entre 1 e 10: '));
+        
+
+        if (chute < minimo || chute > maximo || isNaN(chute)) {
+            alert('Número inválido, tente novamente!');
+            continue;
+        } 
+
+        if (chute === numeroSecreto) {
+            alert('🎉 Parabéns, você acertou!');
+            return; // Sai da função
+        } else { 
+            if (chute > numeroSecreto) { 
+                alert('🔽 O número secreto é menor');
+            } else { 
+                alert('🔼 O número secreto é maior');
+            } 
+
+            tentativas--; 
+            if (tentativas > 0) {
+                alert(`Você errou, ainda tem ${tentativas} tentativas!`);
+            } else {
+                alert('Suas tentativas acabaram, o número secreto era: ' + numeroSecreto);           
+            } 
+        }
+    }
+
+    reiniciarJogo(); // Reiniica o jogo se quiser
+
 }
-
-
-let numeroSorteado = gerarNumeroSecreto();
-let numeroDigitado = advinhemNumeroSecreto();
-
-function verificarPalpite() {
-    console.log(`Número sorteado: ${numeroSorteado}, Palpite: ${numeroDigitado}`); 
-    
-    if (numeroDigitado === numeroSorteado) {
-        alert('Parabéns! Você acertou o número secreto!');
-    } else if (tentativas > 0) {
-        tentativas--;
-        alert(`Você errou! Você ainda tem ${tentativas} tentativas!`); 
-        return advinhemNumeroSecreto();
+        
+// função para reiniciar o jogo
+function reiniciarJogo(){
+    let jogarNovamente = confirm('Deseja jogar novamente?');
+    if (jogarNovamente) {
+        numeroSecreto = gerarNumeroSecreto(); // gerar um novo número
+        tentativas = 3; // Reseta as tentativas
+        verificarChute(); // Inicia novamente o jogo
     } else {
-        alert('Suas tentativas acabaram! O número secreto era: ' + numeroSorteado);
-    } 
-}
-
-function reiniciarJogo() {
-    let reiniciar = prompt('Deseja reiniciar o jogo? Responda com sim ou não: ').toLowerCase();
-    if (reiniciar === 'sim') {
-        alert('Jogo reiniciado!');
-    } else if (reiniciar === 'não') {
-        alert('Jogo encerrado!');
-    } else {
-        alert('Opção inválida!');
+        alert('Obrigado por jogar!');
     }
 }
 
-
-
-/* while (tentativas > 0) {
-    verificarPalpite();
-} */
-
-while (true) {
-    mensagemInicial();
-
-    gerarNumeroSecreto(numeroSorteado);
-    advinhemNumeroSecreto(numeroDigitado);
-    verificarPalpite();
-
-    reiniciarJogo();
-
-}
+// inicia o jogo    
+verificarChute();
 
 
