@@ -1,5 +1,5 @@
-/* Desafio 5 
-Desafio para criar uma lista de compras, onde o usuário pode adicionar ou remover itens da lista
+/* Desafio 6 
+Desafio é utilizar o código de desafio 5 e criar a função de remover itens da lista de compras
 */
 
 let listaCompras = [];
@@ -9,10 +9,15 @@ let congelados = []
 let laticinios = []
 
 function adicionarCompras() {
-    let adicionar = prompt('Adicione algo na sua lista de compras? responda com sim ou não').toLowerCase();
+    let adicionar = prompt(
+        'Você deseja Adicionar ou não uma comida, ou até mesmo remover?\n' +
+        '[1] Adicionar Comida\n' +
+        '[2] Não Adicionar\n' 
+        ).toLowerCase();
 
-    while (adicionar === 'sim') {
-        let item = prompt('Qual item você deseja adicionar?');
+    // Adicionar comida na lista de compras    
+    while (adicionar === '1') {
+        let item = prompt('Qual comida você deseja adicionar?');
         if (item === '' || item === null) {
             alert('Item inválido! Por favor, insira um item válido.');
             continue;
@@ -38,11 +43,15 @@ function adicionarCompras() {
             alert('Categoria inválida!');
         }
 
-        adicionar = prompt('Você deseja adicionar mais algo na sua lista de compras? responda com sim ou não').toLowerCase();
-
+        adicionar = prompt('Você deseja adicionar mais algo na sua lista de compras?\n'
+            + '[1] Adicionar Comida\n'
+            + '[2] Não Adicionar\n'
+            + '[3] Remover Comida\n'
+            ).toLowerCase();
     }
 
-    if (adicionar === 'não') {
+    // Não adicionar e Lista de compras por categorias
+    if (adicionar === '2') {
         alert('Você escolheu não adicionar nada na sua lista de compras!');
         alert('Lista de Compras por Categorias:\n' +
             'Doces: ' + doces + '\n' +
@@ -51,6 +60,21 @@ function adicionarCompras() {
             'Laticinios: ' + laticinios + '\n');
         alert('Lista de compras: ' + listaCompras.join(', ')      
          );
+    } else if (adicionar === '3') { // Remover item da lista de compras
+        let remover = prompt(
+            'Qual comida você deseja remover?\n' + 
+            'Lista de Compras: ' + listaCompras);
+
+        if (remover === '' || remover === null) {
+            alert('Item inválido! Por favor, insira um item válido.');
+        }
+        let index = listaCompras.indexOf(remover);
+        if (index > -1) {
+            listaCompras.splice(index, 1);
+            alert(`O item ${remover} foi removido da sua lista de compras!`);
+        } else {
+            alert('Item não encontrado na lista de compras!');
+        }
     } else {
         alert('Opção inválida!');
     }
