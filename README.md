@@ -10,6 +10,7 @@
 
 ## 📖 About
 Desafios #7DaysOfCode do programa ONE Oracle de 7 dias, ele foi passada cada 1 em um dia, e aqui estão os resultados desse desafios, feitos por mim.
+Meu objetivo era só fazer os desafios da melhor forma possivel, então acabei não fazendo muito coisa com o HTML, somente o básico para rodar.
 
 ![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=DESAFIOS%20FINALIZADOS&color=GREEN&style=for-the-badge)
 
@@ -18,7 +19,7 @@ Desafios #7DaysOfCode do programa ONE Oracle de 7 dias, ele foi passada cada 1 e
 - `desafio2`: Desafio de `if` e `else`, seria para utilizar eles para fazer perguntas.
 - `desafio3`: Desafio de `while` desenvolver um programa que faça várias perguntas dentro dele, dando várias opções de caminhos.
 - `desafio4`: Desafio para desenvolver um jogo de advinhação, o programa faz um sorteio de um número aleátorio e usuário deve advinhar.
-- `desafio5`: Desafio para criar uma lista de compras, onde usuário pode adicionar e caregorizar cada produto da lista.
+- `desafio5`: Desafio para criar uma lista de compras, onde usuário pode adicionar e categorizar cada produto da lista.
 - `desafio6`: Desafio é mesmo do anterior com a mudança de criar a parte de remover o produto escolhido.
 - `desafio7`: Desafio é criar uma calculadora que faça uma operação em cada função.
 
@@ -30,6 +31,7 @@ Para testar os desafios você precisa primeiro clonar o repositório.
 $ git clone https://github.com/Rafael-LynX/
 ```
 O primeiro desafio eu fiz para ser testado junto com node.js, ele é utilizado no terminal do VScode.
+
 ![image](https://github.com/user-attachments/assets/9b2056b3-41b6-415a-8955-3f39a78bf192)
 
 Depois o arquivo HTML é bem simples, você precisa digitar dentro da tag script o desafio que você quer testar
