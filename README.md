@@ -28,7 +28,7 @@ Meu objetivo era só fazer os desafios da melhor forma possivel, então acabei n
 Para testar os desafios você precisa primeiro clonar o repositório.
 ```bash
 # Clone this repository
-$ git clone https://github.com/Rafael-LynX/
+$ git clone https://github.com/Rafael-LynX/7DaysOfCode.git
 ```
 O primeiro desafio eu fiz para ser testado junto com node.js, ele é utilizado no terminal do VScode.
 
